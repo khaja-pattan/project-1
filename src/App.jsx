@@ -1,11 +1,35 @@
-import React from 'react'
+
+
 import Layout from './KhajaPages/Layout'
+
+import './App.css'
+
+import { Routes, Route } from 'react-router-dom'   
+
+import Footer from './Footer/Footer'
+import Layout from './KhajaPages/Layout'
+
 function App() {
   return (
-    <div>
-      <Layout />
+    
+
+
+    <>
+
+   
       
-    </div>
+      
+    
+      <Routes>
+        <Route path="/" element={<Layout />} />
+      </Routes>
+
+      <Footer/>
+      
+  
+
+    </>
+
   )
 }
 
