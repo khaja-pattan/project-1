@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap');
+
+:root {
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+.light-theme {
+  --bg-app: #f4f7fe;
+  --nav-bg: #ffffff;
+  --text-main: #2b3674;
+  --text-muted: #718096;
+  --accent: #707efe;
+  --btn-text: #ffffff;
+  --input-bg: #f4f7fe;
+  --placeholder-color: #a0aec0;
+}
+
+.dark-theme {
+  --bg-app: #0b1437;
+  --nav-bg: #707efe; 
+  --text-main: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --accent: #ffffff;
+  --btn-text: #707efe;
+  --input-bg: rgba(255, 255, 255, 0.1);
+  --placeholder-color: rgba(255, 255, 255, 0.6);
+}
+
+.app-container {
+  background-color: var(--bg-app);
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background-color 0.4s ease;
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--nav-bg);
+  padding: 20px 60px;
+  border-radius: 100px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.logo-name { font-size: 1.8rem; font-weight: 800; color: var(--text-main); }
+.logo-pill { 
+  width: 40px; 
+  height: 40px; 
+  background: var(--accent); 
+  border-radius: 12px; 
+  margin-right: 15px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem; 
+  box-shadow: 0 4px 15px rgba(154, 161, 243, 0.3);
+}
+.nav-left { display: flex; align-items: center; }
+.nav-links { display: flex; list-style: none; gap: 40px; }
+
+.nav-item {
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 1.2rem;
+  font-weight: 700;
+  position: relative;
+  padding: 5px 0;
+}
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; width: 0; height: 3px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+.nav-item:hover::after { width: 100%; }
+
+
+.input-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.input-group input {
+  width: 100%;
+  padding: 18px 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(0,0,0,0.05);
+  background: var(--input-bg);
+  color: var(--text-main);
+  font-size: 1.1rem;
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--placeholder-color) !important;
+  opacity: 1;
+}
+
+.eye-toggle-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.4rem;
+  z-index: 10;
+}
+
+.btn-premium {
+  background: var(--accent);
+  color: var(--btn-text) !important;
+  border: none;
+  padding: 14px 45px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+}
+.modal-card {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--nav-bg);
+  width: 90%; max-width: 450px;
+  padding: 50px; border-radius: 40px;
+  z-index: 2500;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+  animation: popUp 0.4s var(--transition);
+}
+
+@keyframes popUp {
+  from { opacity: 0; transform: translate(-50%, -40%) scale(0.9); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+
+.slider-track {
+  width: 75px; height: 38px;
+  background: rgba(0,0,0,0.1); border-radius: 50px;
+  position: relative; cursor: pointer;
+}
+.slider-track.active { background: rgba(255,255,255,0.2); }
+.slider-ball {
+  width: 30px; height: 30px; background: white;
+  border-radius: 50%; position: absolute; top: 4px; left: 4px;
+  display: flex; align-items: center; justify-content: center;
+  transition: 0.4s;
+}
+.slider-track.active .slider-ball { transform: translateX(37px); }
+
+
+.hero-massive-text {
+  font-size: 7rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-align: center;
+  margin-top: 12vh;
+  line-height: 0.85;
+}
+
+.nav-actions { display: flex; align-items: center; gap: 30px; }
+.close-modal-btn { position: absolute; top: 25px; right: 25px; font-size: 2.5rem; background: none; border: none; cursor: pointer; color: var(--text-muted); }
+.modal-switch-text { text-align: center; margin-top: 25px; font-weight: 600; color: var(--text-muted); }
+.modal-switch-text span { color: var(--accent); cursor: pointer; text-decoration: underline; }
