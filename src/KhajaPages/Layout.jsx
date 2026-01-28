@@ -25,7 +25,7 @@ const Layout = () => {
           
           <h2 className="modal-title">
             {authMode === 'login' ? 'Welcome Back' : 'Create Account'}
-          </h2>
+          </h2><br/>
           
           <form className="modal-form" onSubmit={(e) => e.preventDefault()}>
             {authMode === 'signup' && (
