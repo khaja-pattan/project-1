@@ -7,18 +7,15 @@ import Home from './NavBar/Home'
 import { Routes, Route } from 'react-router-dom'   
 import AboutPage from './NavBar/AboutPage'
 import Footer from './Footer/Footer'
+import Layout from './KhajaPages/Layout'
 
 function App() {
  
 
   return (
     <>
-       <Navbar />
-      
-        <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path='/about' element={<AboutPage/>}/>
+      <Routes>
+        <Route path="/" element={<Layout />} />
       </Routes>
 
       <Footer/>
