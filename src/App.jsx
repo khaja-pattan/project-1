@@ -10,8 +10,6 @@ import Footer from './Footer/Footer'
 import Layout from './KhajaPages/Layout'
 
 function App() {
- 
-
   return (
     <>
       <Routes>
