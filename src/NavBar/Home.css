@@ -1,6 +1,6 @@
 .Homepage{
     height: 700px;
-    width: auto;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
